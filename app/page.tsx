@@ -143,11 +143,12 @@ export default function Home() {
           <div className="all-players-section">
             <div className="table-heading"><div><h3>All players owned in this league</h3><p>{data.allPlayers.length} unique players across all {data.totalTeams} teams · Includes bench players</p></div><SortSelect value={sortAll} onChange={setSortAll} /></div>
             <div className="player-list all-player-list">
-              <div className="list-labels all-labels"><span>PLAYER</span><span>LEAGUE OWNERSHIP</span><span>POINTS</span></div>
+              <div className="list-labels all-labels"><span>PLAYER</span><span>LEAGUE %</span><span>GLOBAL %</span><span>POINTS</span></div>
               {sortedAll.map(player => (
                 <div className="player-row all-player-row" key={player.id}>
                   <div className="player-info"><span className={`position position-${player.position.toLowerCase()}`}>{player.position}</span><div><strong>{player.name}</strong><small>{player.club}{player.exclusiveOwner ? ` · Only owned by ${player.exclusiveOwner}` : ""}</small></div></div>
                   <div className="ownership"><div className="ownership-value">{player.ownershipPercent.toFixed(1)}<span>%</span></div><div className="bar-track"><div className="bar-fill" style={{ width: `${Math.min(100, player.ownershipPercent)}%` }} /></div></div>
+                  <div className="global-ownership-cell">{player.globalOwnershipPercent.toFixed(1)}%</div>
                   <div className="points-cell">{player.totalPoints}</div>
                 </div>
               ))}

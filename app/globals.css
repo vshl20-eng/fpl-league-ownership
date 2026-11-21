@@ -129,3 +129,16 @@ footer{padding:65px 0 28px}
  .all-player-row .player-info{gap:6px}.all-player-row .player-info strong{font-size:10px}.all-player-row .player-info small{font-size:8px;line-height:1.35}
  .all-player-row .ownership{gap:4px}.all-player-row .ownership-value{font-size:10px;min-width:40px}.all-player-row .bar-track{display:none}.points-cell{font-size:10px}
 }
+
+
+/* Global ownership column in the all-players table */
+.all-labels{grid-template-columns:minmax(0,1fr) 150px 100px 55px}
+.all-labels span:nth-child(2),.all-labels span:nth-child(3),.all-labels span:nth-child(4){text-align:right}
+.all-player-row{grid-template-columns:minmax(0,1fr) 150px 100px 55px;gap:10px}
+.global-ownership-cell{text-align:right;font:13px 'DM Mono',monospace;color:var(--ink)}
+@media(max-width:650px){
+ .all-labels,.all-player-row{grid-template-columns:minmax(0,1fr) 76px 76px 35px;padding-left:10px;padding-right:10px;gap:5px}
+ .all-player-row .player-info{gap:6px}.all-player-row .player-info strong{font-size:10px}.all-player-row .player-info small{font-size:8px;line-height:1.35}
+ .all-player-row .ownership{gap:4px}.all-player-row .ownership-value{font-size:10px;min-width:40px}.all-player-row .bar-track{display:none}
+ .global-ownership-cell,.points-cell{font-size:10px}
+}
