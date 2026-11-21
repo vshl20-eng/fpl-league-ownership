@@ -96,3 +96,36 @@ footer{padding:65px 0 28px}
  .player-info{gap:8px}.player-info strong{font-size:11px}.player-info small{font-size:9px}
  .footer-rule+div{flex-direction:column;gap:7px}
 }
+
+/* League-first selection and expanded ownership tables */
+.team-picker{margin-top:48px}
+.team-search{width:100%;border:1px solid var(--line);background:white;border-radius:7px;padding:13px 14px;font-size:13px;margin:0 0 12px;outline:none}
+.team-search:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,168,107,.1)}
+.team-list{background:white;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.team-row{width:100%;display:grid;grid-template-columns:38px 1fr 70px 22px;gap:10px;align-items:center;text-align:left;padding:13px 16px;border:0;border-top:1px solid #edf0ed;background:white;color:var(--ink);cursor:pointer}
+.team-row:first-child{border-top:0}.team-row:hover{background:#f5faf6}.team-row:disabled{opacity:.55;cursor:wait}
+.team-rank{font:12px 'DM Mono',monospace;color:var(--muted)}
+.team-name,.team-points{display:flex;flex-direction:column;gap:3px;min-width:0}.team-name strong{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.team-name small,.team-points small{font-size:10px;color:var(--muted)}
+.team-points{text-align:right}.team-points strong{font:13px 'DM Mono',monospace}.team-arrow{color:var(--green-dark);font-size:18px;text-align:right}
+.empty-state{padding:18px;text-align:center;color:var(--muted);font-size:12px}
+.reset{margin-bottom:16px}
+.squad-labels{grid-template-columns:1fr 190px}
+.squad-player-row{grid-template-columns:1fr 190px}
+.dual-ownership{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:right}
+.dual-ownership>div{display:flex;flex-direction:column;gap:3px}
+.dual-ownership strong{font:500 14px 'DM Mono',monospace}
+.dual-ownership small{font:8px 'DM Mono',monospace;letter-spacing:.8px;color:var(--muted)}
+.all-players-section{margin-top:42px}
+.all-labels{grid-template-columns:1fr 180px 55px}
+.all-labels span:nth-child(2),.all-labels span:nth-child(3){text-align:right}
+.all-player-row{grid-template-columns:1fr 180px 55px;gap:10px}
+.points-cell{text-align:right;font:13px 'DM Mono',monospace}
+@media(max-width:650px){
+ .team-picker{margin-top:38px}.team-row{grid-template-columns:25px 1fr 52px 16px;padding:12px 10px;gap:7px}
+ .team-name strong{font-size:11px}.team-name small{font-size:9px}.team-points strong{font-size:11px}
+ .squad-labels,.squad-player-row{grid-template-columns:1fr 130px;padding-left:12px;padding-right:12px}
+ .dual-ownership{gap:5px}.dual-ownership strong{font-size:11px}.dual-ownership small{font-size:7px}
+ .all-labels,.all-player-row{grid-template-columns:minmax(0,1fr) 105px 35px;padding-left:10px;padding-right:10px;gap:5px}
+ .all-player-row .player-info{gap:6px}.all-player-row .player-info strong{font-size:10px}.all-player-row .player-info small{font-size:8px;line-height:1.35}
+ .all-player-row .ownership{gap:4px}.all-player-row .ownership-value{font-size:10px;min-width:40px}.all-player-row .bar-track{display:none}.points-cell{font-size:10px}
+}
